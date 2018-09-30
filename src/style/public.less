@@ -1,2 +1,111 @@
-@import 'base';
-@import 'var';
+@import './base.less';
+@import './var.less';
+
+html{
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: @light-gray;
+  // font-weight: 400;
+  // font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, STHeitiSC-Light, WOL_SB, 'Segoe UI Semibold', 'Segoe UI', Tahoma, Helvetica, sans-serif;
+}
+
+// 同el-card
+section {
+  border-radius: 4px;
+  border: 1px solid #ebeef5;
+  background-color: #fff;
+  color: #303133;
+  transition: .3s;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  padding: 20px;
+
+}
+section + section{
+  margin: 15px 0;
+}
+section + div{
+  margin: 15px 0;
+}
+
+.white {
+  color: @white;
+}
+
+.blue {
+  color: @blue;
+}
+
+.success {
+  color: @success;
+}
+
+.warning {
+  color: @warning;
+}
+
+.danger {
+  color: @danger;
+}
+
+.info {
+  color: @info;
+}
+
+.big-words {
+  font-size: 18px;
+}
+
+.medium-words{
+  font-size: 16px;
+}
+
+.small-words {
+  font-size: 14px;
+}
+
+.mini-words {
+  font-size: 12px;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.pagination {
+  text-align: right;
+  margin-top: 15px;
+}
+
+.link {
+  cursor: pointer;
+  color: @blue;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: fade(@blue, 80%);
+  }
+}
+
+.info-link {
+  cursor: pointer;
+  color: @info;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: fade(@info, 80%);
+  }
+}
+
+.danger-link {
+  cursor: pointer;
+  color: @danger;
+  font-weight: 500;
+  text-decoration: none;
+  &:hover {
+    color: fade(@danger, 80%);
+  }
+}
+

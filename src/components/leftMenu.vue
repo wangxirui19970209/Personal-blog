@@ -15,9 +15,13 @@
               <span>{{item.label}}</span>
             </template>
             <el-menu-item-group>
-              <el-menu-item  v-for="(children,num) in menuConfig[index].children" :index="`${index}-${num}`" :key="num">
-                <a :href="children.url">{{children.label}}</a>
-              </el-menu-item>
+              <div v-for="(children,num) in menuConfig[index].children" :key="num">
+                <router-link :to="children.url">
+                  <el-menu-item :index="`${index}-${num}`">
+                    {{children.label}}
+                  </el-menu-item>
+                </router-link>
+              </div>
             </el-menu-item-group>
           </el-submenu>
         </el-menu>
@@ -28,24 +32,12 @@
 
 <script>
   import menuConfig from './../config/menuConfig'
+
   export default {
     name: "leftMenu",
-    mounted() {
-      this.$api.index.project().then((res)=>{
-      })
-      console.log(menuConfig.children)
-    },
     data() {
       return {
         menuConfig: menuConfig
-      }
-    },
-    methods: {
-      handleOpen(key, keyPath) {
-        console.log(key, keyPath);
-      },
-      handleClose(key, keyPath) {
-        console.log(key, keyPath);
       }
     }
   }
@@ -62,6 +54,9 @@
     .bg {
       height: 100%;
       background-color: rgb(84, 92, 100);
+      .el-menu-vertical-demo {
+        border: 0;
+      }
     }
   }
 </style>

@@ -3,7 +3,9 @@
       <top-header></top-header>
       <el-container>
         <left-menu></left-menu>
-        <el-main>Main</el-main>
+        <div class="main">
+          <router-view>Main</router-view>
+        </div>
       </el-container>
   </div>
 </template>
@@ -21,5 +23,7 @@
 </script>
 
 <style scoped>
-
+.main {
+  padding-left: 200px;
+}
 </style>
